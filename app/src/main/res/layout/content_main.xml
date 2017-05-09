@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ravivats.moonwalk.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:id="@+id/layout1"
+    android:backgroundTint="#040202"
+    android:background="#020000">
+
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageGallery"
+        android:layout_marginTop="72dp"
+        android:onClick="fnGallery"
+        android:background="@drawable/menu_gallery"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageSettings"
+        android:onClick="fnSettings"
+        android:background="@drawable/menu_settings"
+        android:layout_above="@+id/textAbout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageAbout"
+        android:onClick="fnAbout"
+        android:background="@drawable/menu_about_us"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/textQuiz"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageMoon"
+        android:onClick="fnMoon"
+        android:background="@drawable/menu_lunar_data"
+        android:layout_above="@+id/imageQuiz"
+        android:layout_alignLeft="@+id/imageSettings"
+        android:layout_alignStart="@+id/imageSettings" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageLocation"
+        android:onClick="fnLocation"
+        android:background="@drawable/menu_location"
+        android:layout_alignTop="@+id/imageMoon"
+        android:layout_alignLeft="@+id/imageAbout"
+        android:layout_alignStart="@+id/imageAbout" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Image Gallery"
+        android:id="@+id/textGallery"
+        android:textColor="#FFFEFEFE"
+        android:layout_below="@+id/imageGallery"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="About Us"
+        android:id="@+id/textAbout"
+        android:layout_below="@+id/imageAbout"
+        android:textColor="#FFFEFEFE"
+        android:layout_alignLeft="@+id/imageAbout"
+        android:layout_alignStart="@+id/imageAbout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="LIVE NASA Feed"
+        android:id="@+id/textSettings"
+        android:layout_below="@+id/imageSettings"
+        android:layout_alignLeft="@+id/imageSettings"
+        android:layout_alignStart="@+id/imageSettings"
+        android:textColor="#FFFEFEFE"/>
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageQuiz"
+        android:onClick="fnQuiz"
+        android:background="@drawable/menu_quiz"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Quiz"
+        android:id="@+id/textQuiz"
+        android:layout_below="@+id/imageQuiz"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFEFEFE"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Lunar Data"
+        android:id="@+id/textView"
+        android:textColor="#FFFEFEFE"
+        android:layout_alignTop="@+id/imageQuiz"
+        android:layout_alignLeft="@+id/imageMoon"
+        android:layout_alignStart="@+id/imageMoon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFEFEFE"
+        android:text="Location"
+        android:id="@+id/textLocation"
+        android:layout_alignTop="@+id/imageQuiz"
+        android:layout_alignRight="@+id/textAbout"
+        android:layout_alignEnd="@+id/textAbout" />
+
+</RelativeLayout>
