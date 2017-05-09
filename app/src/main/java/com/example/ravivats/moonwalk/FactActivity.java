@@ -17,7 +17,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ApolloActivity extends AppCompatActivity {
+public class FactActivity extends AppCompatActivity {
     TextView explanationTxt,titleTxt,dateTxt;
     ImageView imageView;
     String getURL ="https://api.nasa.gov/planetary/apod?api_key=ZBCHQARaDf75KEY1sEXstfFsR6BRkMf8XHdiFaxd";
@@ -25,8 +25,8 @@ public class ApolloActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apollo);
-        RequestQueue rQueue = Volley.newRequestQueue(ApolloActivity.this);
+        setContentView(R.layout.activity_fact);
+        RequestQueue rQueue = Volley.newRequestQueue(FactActivity.this);
         explanationTxt= (TextView) findViewById(R.id.apollo_exp_TextView);
         titleTxt= (TextView) findViewById(R.id.apolloTitleTextView);
         dateTxt=(TextView) findViewById(R.id.apollo_date_TextView);
@@ -60,7 +60,7 @@ public class ApolloActivity extends AppCompatActivity {
         rQueue.add(jsObjRequest);
     }
     void imageLoad()
-    {   RequestQueue r1Queue = Volley.newRequestQueue(ApolloActivity.this);
+    {   RequestQueue r1Queue = Volley.newRequestQueue(FactActivity.this);
         ImageRequest imageRequest = new ImageRequest(imageURL,
             new Response.Listener<Bitmap>() {
                 @Override

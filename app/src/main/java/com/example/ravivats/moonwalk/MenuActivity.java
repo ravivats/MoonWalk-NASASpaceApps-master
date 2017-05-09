@@ -6,24 +6,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class DataActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
     ImageButton moonButton, apolloButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data);
+        setContentView(R.layout.activity_menu);
         moonButton =(ImageButton) findViewById(R.id.moonBtn);
         apolloButton= (ImageButton) findViewById(R.id.apolloBtn);
         moonButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DataActivity.this, MoonActivity.class));
+                startActivity(new Intent(MenuActivity.this, MoonActivity.class));
             }
         });
         apolloButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DataActivity.this, ApolloActivity.class));
+                startActivity(new Intent(MenuActivity.this, FactActivity.class));
             }
         });
 

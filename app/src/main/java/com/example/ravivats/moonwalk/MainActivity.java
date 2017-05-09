@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(my_intent1);
     }
     public void fnMoon(View v)
-    {Intent my_intent = new Intent(this,DataActivity.class);
+    {Intent my_intent = new Intent(this,MenuActivity.class);
         startActivity(my_intent);
     }
     public void fnQuiz(View v)
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(my_intent);
     }
     public void fnSettings(View v)
-    {Intent my_intent = new Intent(this,SettingsActivity.class);
+    {Intent my_intent = new Intent(this,LiveStreamActivity.class);
         startActivity(my_intent);
     }
     public void fnAbout(View v)

@@ -19,4 +19,5 @@
     <string name="nasa_fact_of_the_day">NASA: Fact of the day</string>
     <string name="distance">Distance from moon: 363103.268 kms</string>
     <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="contribute_question">Contribute Question</string>
 </resources>
