@@ -1,43 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout
         android:id="@+id/relativeLayout"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/menu_bck">
-    <ImageButton
-        android:background="@drawable/menu_moon"
-        android:contentDescription="@string/about_moon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/moonBtn"
-        android:layout_marginTop="75dp"
-        android:layout_centerHorizontal="true" />
-    <TextView
-        android:textColor="#FF8000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/about_moon"
-        android:id="@+id/moonTextView"
-        android:layout_below="@+id/moonBtn"
-        android:layout_centerHorizontal="true" />
-    <ImageButton
-        android:background="@drawable/menu_rocket"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/nasa_fact_of_the_day"
-        android:id="@+id/apolloBtn"
-        android:layout_marginTop="200dp"
-        android:layout_below="@id/moonTextView"
-        android:layout_centerHorizontal="true" />
-    <TextView
-        android:textColor="#FF8000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/nasa_fact_of_the_day"
-        android:id="@+id/apolloTextView"
-        android:layout_below="@+id/apolloBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="wrap_content" >
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
 </RelativeLayout>
+</ScrollView>
