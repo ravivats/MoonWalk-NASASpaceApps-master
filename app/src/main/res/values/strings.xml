@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="ques1">  Q. If you weighed 45 kgs on Earth, how much would you weigh on the Moon?\n
         A. 45 kgs  B. 7½ kgs  C. 15 kgs  D.None</string>
-    <string name="ques2">  Q. Which is the largest crater on the Moon?\n
+    <string name="ques2">  Q. Which of these is the largest crater on the Moon?\n
         A. The crater Bailly  B. The crater Carrington\n</string>
     <string name="ques3">  Q. Who was the last person to walk on the Moon?\n
         A. Yuri Gagarin     B. Neil Armstrong\n
@@ -12,7 +12,14 @@
         A. 61 times     B.50 times\n
         C.10 times      D.81 times </string>
     <string name="ques5">  Q. If you can jump 3 feet high on the Earth, how high could you jump on the Moon?\n
-        A. Just over 18 feet  B.Just over 10 feet\n C. 3 feet  D.  Just over Half(1/2) feet</string>
+        A. Over 18 feet  B.Just over 10 feet\n C. 3 feet  D.  Just over Half(1/2) feet</string>
+    <string-array name="ques_array">
+        <item>@string/ques1</item>
+        <item>@string/ques2</item>
+        <item>@string/ques3</item>
+        <item>@string/ques4</item>
+        <item>@string/ques5</item>
+    </string-array>
     <string-array name="url_array">
         <item>http://solarviews.com/thumb/vss/VSS00093.jpg</item>
         <item>http://solarviews.com/thumb/venus/venus2.jpg</item>
@@ -42,4 +49,5 @@
     <string name="distance">Distance from moon: 363103.268 kms</string>
     <string name="player_error">Error initializing YouTube player: %s</string>
     <string name="contribute_question">Contribute Question</string>
+    <string name="team_members">Team Members:</string>
 </resources>

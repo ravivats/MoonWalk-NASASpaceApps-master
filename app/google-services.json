@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "337414179062",
+    "firebase_url": "https://msritcseblogs-1477058619404.firebaseio.com",
+    "project_id": "msritcseblogs-1477058619404",
+    "storage_bucket": "msritcseblogs-1477058619404.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337414179062:android:d1c67535994e57c4",
+        "android_client_info": {
+          "package_name": "com.example.ravivats.moonwalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337414179062-rr1u875amklsm1m37u20lmg4hc4023sb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ravivats.moonwalk",
+            "certificate_hash": "281952909f6a2a61aa5831eeed7987e4c07b500f"
+          }
+        },
+        {
+          "client_id": "337414179062-fdb1mbsoo6k31spodnrmi1bjoqfgfq6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXBUlrd_Zvuk9eCsPfKzb4bJMscJd7YEA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337414179062-vbt2ser2vuvb2e352ab984bhf8ubh5s2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ravivats.moonwalk"
+              }
+            },
+            {
+              "client_id": "337414179062-fdb1mbsoo6k31spodnrmi1bjoqfgfq6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -27,19 +27,16 @@ public class AboutActivity extends AppCompatActivity {
                 composeEmail(addresses,"Query regarding MoonWalk App");
             }
         });
-
         ArrayList<String> ai = new ArrayList<>();
-        ai.add("Ravi Vats\t\t USN:1MS14CS100");
-        ai.add("Satya Teja\t\t USN:1MS14CS110");
-        ai.add("Vishal Dhull\t\t USN:1MS14CS124");
-
+        ai.add("Ravi Vats     USN:1MS14CS100");
+        ai.add("Satya Teja    USN:1MS14CS110");
+        ai.add("Vishal Dhull  USN:1MS14CS124");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ai);
         membersListView.setAdapter(adapter);
-
     }
     public void composeEmail(String[] addresses, String subject) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.setData(Uri.parse("mailto:")); // only option1 apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         if (intent.resolveActivity(getPackageManager()) != null) {
