@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static android.R.attr.name;
 
@@ -30,13 +31,16 @@ public class QuizActivity extends AppCompatActivity {
     private static final String TAG = "QuizActivity" ;
     private static int correct=0;
     private DatabaseReference mDatabase;
+    Iterable<DataSnapshot> questions;
+    Iterator<DataSnapshot> question;
     ArrayList<Boolean> answers;
     TextView quizQuestion;
     RadioButton option1Btn,option2Btn,option3Btn,option4Btn;
-    Button nextQuestionBtn;
+    Button nextQuestionBtn,submitQuestionBtn,startQuiz;
     RadioGroup quizGroup;
     String correctAnswer,markedAnswer;
     int checkId=9999;
+    int loopno=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +53,17 @@ public class QuizActivity extends AppCompatActivity {
         option3Btn = (RadioButton) findViewById(R.id.quizOption3);
         option4Btn = (RadioButton) findViewById(R.id.quizOption4);
         nextQuestionBtn = (Button) findViewById(R.id.nextQuestionBtn);
+        startQuiz = (Button) findViewById(R.id.startQuiz);
+        submitQuestionBtn = (Button) findViewById(R.id.submitQuestionBtn);
         quizGroup = (RadioGroup) findViewById(R.id.quizOptions);
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        //for(int i=1; i<;i++)
         mDatabase.child("questions").child("trigger").setValue(Math.random());
-        mDatabase.child("questions").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("questions").child("trigger").removeValue();
+        mDatabase.child("questions").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-             Iterable<DataSnapshot> questions = dataSnapshot.getChildren();
+                questions = dataSnapshot.getChildren();
+                question = questions.iterator();
                 for (DataSnapshot question1 : questions) {
                     Question ques = question1.getValue(Question.class);
                     quizQuestion.setText(ques.question);
@@ -64,62 +71,78 @@ public class QuizActivity extends AppCompatActivity {
                     option2Btn.setText(ques.option2);
                     option3Btn.setText(ques.option3);
                     option4Btn.setText(ques.option4);
-                    correctAnswer=ques.answer;
-                    Log.d("DATA","data found");
+                    correctAnswer = ques.answer;
+                    Log.d("DATA", "data found");
                     break;
                 }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.w(TAG, "postComments:onCancelled", databaseError.toException());
+                Toast.makeText(QuizActivity.this, "Retrieval failed. Check Internet Connection.", Toast.LENGTH_SHORT).show();
             }
         });
-//        mDatabase.child("questions").child("ques0").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-//            }
-//        });
-        int p=13;
+
         quizGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                checkId=checkedId;
+                checkId = checkedId;
+            }
+        });
+
+        startQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizQuestion.setVisibility(View.VISIBLE);
+                nextQuestionBtn.setVisibility(View.VISIBLE);
+                submitQuestionBtn.setVisibility(View.VISIBLE);
+                quizGroup.setVisibility(View.VISIBLE);
+                startQuiz.setVisibility(View.INVISIBLE);
+                startQuiz.setClickable(false);
+            }
+        });
+        submitQuestionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (checkId) {
+                    case R.id.quizOption1:
+                        markedAnswer = "A";
+                        break;
+                    case R.id.quizOption2:
+                        markedAnswer = "B";
+                        break;
+                    case R.id.quizOption3:
+                        markedAnswer = "C";
+                        break;
+                    case R.id.quizOption4:
+                        markedAnswer = "D";
+                        break;
+                    default:
+                        break;
+                }
+                if (correctAnswer.equals(markedAnswer)) {
+                    increaseCorrect();
+                    Toast.makeText(QuizActivity.this, "Correct Answer", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuizActivity.this, "Correct Answers:"+correct, Toast.LENGTH_SHORT).show();
+                }
             }
         });
         nextQuestionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(checkId){
-                    case R.id.quizOption1:
-                        markedAnswer="A";
-                        break;
-                    case R.id.quizOption2:
-                        markedAnswer="B";
-                        break;
-                    case R.id.quizOption3:
-                        markedAnswer="C";
-                        break;
-                    case R.id.quizOption4:
-                        markedAnswer="D";
-                        break;
-                    default:
-                        break;
-                }
-                if(correctAnswer.equals(markedAnswer)){increaseCorrect();
-                    Toast.makeText(QuizActivity.this, "Correct Answer", Toast.LENGTH_SHORT).show();
+                if(question.hasNext()) {
+                    Question ques = question.next().getValue(Question.class);
+                    quizQuestion.setText(ques.question);
+                    option1Btn.setText(ques.option1);
+                    option2Btn.setText(ques.option2);
+                    option3Btn.setText(ques.option3);
+                    option4Btn.setText(ques.option4);
+                    correctAnswer = ques.answer;
                 }
             }
         });
     }
-     private static void increaseCorrect(){
+    private static void increaseCorrect(){
          correct=correct+1;
-     }
-
+    }
 }
