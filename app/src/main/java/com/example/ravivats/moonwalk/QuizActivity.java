@@ -111,6 +111,7 @@ public class QuizActivity extends AppCompatActivity {
                 if (correctAnswer.equals(markedAnswer)) {
                     increaseCorrect();
                 }
+                quizGroup.clearCheck();
                 nextQuestion();
             }
         });
@@ -125,7 +126,6 @@ public class QuizActivity extends AppCompatActivity {
             option3Btn.setText(ques.option3);
             option4Btn.setText(ques.option4);
             correctAnswer = ques.answer;
-            quizGroup.clearCheck();
         }
         else{
             Toast.makeText(this, "Quiz Finished!", Toast.LENGTH_SHORT).show();
