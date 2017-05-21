@@ -33,9 +33,7 @@ public class QuizActivity extends AppCompatActivity {
         if(ss3.equals("C") || ss3.equals("c")){a=a+1;}
         if(ss4.equals("D") || ss4.equals("d")){a=a+1;}
         if(ss5.equals("A") || ss5.equals("a")){a=a+1;}
-        String score="Your score is "+a+"/5";
+        String score="Your score is "+ a +"/5";
         Toast.makeText(this,score,Toast.LENGTH_LONG).show();
-
     }
-
 }
