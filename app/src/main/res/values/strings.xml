@@ -14,8 +14,22 @@
     <string name="ques5">  Q. If you can jump 3 feet high on the Earth, how high could you jump on the Moon?\n
         A. Just over 18 feet  B.Just over 10 feet\n C. 3 feet  D.  Just over Half(1/2) feet   </string>
     <string name="moonInfo">The Moon is Earth\'s only natural satellite.</string>
+    <string-array name="planets_array">
+        <item>Mercury is the 1st Planet in the solar system.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
     <string name="about_moon">About Moon</string>
-    <string name="about_apollo">About Apollo</string>
     <string name="nasa_fact_of_the_day">NASA: Fact of the day</string>
     <string name="distance">Distance from moon: 363103.268 kms</string>
     <string name="player_error">Error initializing YouTube player: %s</string>

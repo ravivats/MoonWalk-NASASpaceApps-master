@@ -27,7 +27,7 @@ public class FactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fact);
         RequestQueue rQueue = Volley.newRequestQueue(FactActivity.this);
-        explanationTxt= (TextView) findViewById(R.id.apollo_exp_TextView);
+        explanationTxt= (TextView) findViewById(R.id.celestialTextView);
         titleTxt= (TextView) findViewById(R.id.apolloTitleTextView);
         dateTxt=(TextView) findViewById(R.id.apollo_date_TextView);
         imageView=(ImageView)findViewById(R.id.apollo_ImageView);

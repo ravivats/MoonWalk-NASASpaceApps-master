@@ -42,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
                 if(position==0){
                     startActivity(new Intent(MenuActivity.this, FactActivity.class));
                 } else if(position>0){
-                    startActivity(new Intent(MenuActivity.this, MoonActivity.class));
+                    startActivity(new Intent(MenuActivity.this, MoonActivity.class).putExtra("position",position));
                 }
 
             }

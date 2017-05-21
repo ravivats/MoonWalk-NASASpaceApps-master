@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -10,19 +13,17 @@
     android:id="@+id/rmoon"
     tools:context="com.example.ravivats.moonwalk.MoonActivity">
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/about_moon"
-        android:id="@+id/moonImg"
+        android:id="@+id/celestialImageView"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/menu_moon"
         android:layout_marginTop="10dp" />
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/apollo_exp_TextView"
-        android:text="@string/moonInfo"
-        android:layout_below="@id/moonImg"/>
-
+        android:id="@+id/celestialTextView"
+        android:layout_below="@id/celestialImageView"/>
 </RelativeLayout>
+</ScrollView>
