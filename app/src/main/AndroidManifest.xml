@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ravivats.moonwalk">
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,21 +22,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GalleryActivity"
-            android:label="Gallery"/>
-        <activity android:name=".QuizActivity"
-            android:label="Quiz"/>
-        <activity android:name=".LocationActivity"
+        <activity
+            android:name=".GalleryActivity"
+            android:label="Gallery" />
+        <activity
+            android:name=".QuizActivity"
+            android:label="Quiz" />
+        <activity
+            android:name=".LocationActivity"
             android:label="Location" />
-        <activity android:name=".AboutActivity"
-            android:label="About Us"/>
-        <activity android:name=".MenuActivity"
-            android:label="Facts Section"/>
-        <activity android:name=".LiveStreamActivity"
-            android:label="NASA Live Stream"/>
-        <activity android:name=".MoonActivity"
-            android:label="About Planets"/>
-        <activity android:name=".FactActivity"
-            android:label="NASA: Fact of the day"/>
+        <activity
+            android:name=".AboutActivity"
+            android:label="About Us" />
+        <activity
+            android:name=".MenuActivity"
+            android:label="Facts Section" />
+        <activity
+            android:name=".LiveStreamActivity"
+            android:label="NASA Live Stream" />
+        <activity
+            android:name=".MoonActivity"
+            android:label="About Planets" />
+        <activity
+            android:name=".FactActivity"
+            android:label="NASA: Fact of the day" />
+        <activity android:name=".QuizResult"></activity>
     </application>
+
 </manifest>

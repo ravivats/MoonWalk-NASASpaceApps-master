@@ -1,6 +1,5 @@
 package com.example.ravivats.moonwalk;
-
-
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,13 +26,13 @@ public class QuizActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     Iterable<DataSnapshot> questions;
     Iterator<DataSnapshot> question;
-    ArrayList<Boolean> answers;
     TextView quizQuestion;
     RadioButton option1Btn,option2Btn,option3Btn,option4Btn;
     Button submitQuestionBtn,startQuiz;
     RadioGroup quizGroup;
     String correctAnswer,markedAnswer;
     int checkId=9999;
+    ArrayList<String> answerInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class QuizActivity extends AppCompatActivity {
         Toast.makeText(this, code, Toast.LENGTH_LONG).show();
         quizQuestion = (TextView) findViewById(R.id.quizQuestion);
         option1Btn = (RadioButton) findViewById(R.id.quizOption1);
+        answerInfo = new ArrayList<>();
         option2Btn = (RadioButton) findViewById(R.id.quizOption2);
         option3Btn = (RadioButton) findViewById(R.id.quizOption3);
         option4Btn = (RadioButton) findViewById(R.id.quizOption4);
@@ -111,6 +111,7 @@ public class QuizActivity extends AppCompatActivity {
                 if (correctAnswer.equals(markedAnswer)) {
                     increaseCorrect();
                 }
+                answerInfo.add("Your Ans: " +markedAnswer+"  Correct Ans: " +correctAnswer);
                 quizGroup.clearCheck();
                 nextQuestion();
             }
@@ -129,6 +130,11 @@ public class QuizActivity extends AppCompatActivity {
         }
         else{
             Toast.makeText(this, "Quiz Finished!", Toast.LENGTH_SHORT).show();
+            Intent i=new Intent(QuizActivity.this,QuizResult.class);
+            i.putExtra("answerInfo",answerInfo);
+            i.putExtra("score",correct);
+            correct=0;
+            startActivity(i);
         }
     }
     private static void increaseCorrect(){

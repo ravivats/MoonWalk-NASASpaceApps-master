@@ -3,12 +3,11 @@ package com.example.ravivats.moonwalk;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.common.util.concurrent.ExecutionError;
+
 
 public class MoonActivity extends AppCompatActivity {
     ImageView celestialImageView;

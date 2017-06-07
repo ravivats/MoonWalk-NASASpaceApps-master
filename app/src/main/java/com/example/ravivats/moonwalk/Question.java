@@ -1,9 +1,5 @@
 package com.example.ravivats.moonwalk;
 
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class Question {
     public String question, option1, option2, option3, option4, answer;
 
